@@ -4,7 +4,7 @@ import { pollForGenerationResult } from '../../packages/studio/src/utils/generat
 export class MuapiClient {
     constructor() {
         // Ideally user provides this in settings
-        this.baseUrl = (typeof import.meta !== 'undefined' && import.meta.env?.DEV) ? '' : 'https://api.muapi.ai';
+           this.baseUrl = '';
     }
 
     getKey() {
