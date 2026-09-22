@@ -61,9 +61,20 @@ export class MuapiClient {
             finalPayload.image_url = null;
         }
 
-        // Optional params if supported by model
+                // Optional params if supported by model
         if (params.seed && params.seed !== -1) {
             finalPayload.seed = params.seed;
+        }
+
+        if (params.model === 'flux-schnell') {
+            const res = await fetch('/api/replicate/image', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ prompt: params.prompt })
+            });
+            const data = await res.json();
+            const imageUrl = data.output?.[0] || data.output;
+            return { ...data, url: imageUrl };
         }
 
         console.log('[Muapi] Requesting:', url);
