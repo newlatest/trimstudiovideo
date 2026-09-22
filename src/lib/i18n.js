@@ -91,19 +91,18 @@ const translations = {
         'settings.title': 'Settings',
         'settings.apiKey': 'API Key',
         'settings.localModels': 'Local Models',
-        'settings.muapiKeyLabel': 'Muapi API Key',
-        'settings.keyPlaceholder': 'Enter your Muapi API key...',
-        'settings.keyNote': 'Your API key is stored locally and never sent anywhere except api.muapi.ai.',
-        'settings.invalidKey': 'Please enter a valid API key.',
+        'settings.muapiKeyLabel': 'API Key',
+'settings.keyPlaceholder': 'Enter your API key...',
+'settings.keyNote': 'Your API key is stored locally.',
 
         // Auth Modal
         'auth.title': 'Muapi API Key Required',
         'auth.subtitle': 'Create a Muapi access key, then paste the key value here to start creating high-aesthetic images.',
         'auth.keyLabel': 'Muapi Access Key',
         'auth.keyPlaceholder': 'Paste your access key value...',
-        'auth.keyNote': 'Do not enter the key name or label; paste the generated key value from Muapi.',
+        'auth.keyNote': 'Do not enter the key name or label; paste the generated key value.',
         'auth.initBtn': 'Initialize Studio',
-        'auth.createKey': 'Create or copy a Muapi access key →',
+        'auth.createKey': 'Create or copy an access key →',
 
         // Image Studio
         'image.title': 'Image Studio',
@@ -302,9 +301,9 @@ const translations = {
         'auth.subtitle': '创建一个 Muapi 访问密钥，然后将密钥值粘贴到这里开始创建高质量图像。',
         'auth.keyLabel': 'Muapi 访问密钥',
         'auth.keyPlaceholder': '粘贴您的访问密钥值...',
-        'auth.keyNote': '请不要输入密钥名称或标签；粘贴从 Muapi 生成的密钥值。',
+        'auth.keyNote': '请不要输入密钥名称或标签；粘贴生成的密钥值。',
         'auth.initBtn': '初始化工作室',
-        'auth.createKey': '创建或复制 Muapi 访问密钥 →',
+        'auth.createKey': '创建或复制访问密钥 →',
 
         // Image Studio
         'image.title': '图像工作室',
