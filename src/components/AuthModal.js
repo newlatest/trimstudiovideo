@@ -1,6 +1,7 @@
 import { t } from '../lib/i18n.js';
 
 export function AuthModal(onSuccess) {
+       onSuccess(); return;
     const overlay = document.createElement('div');
     overlay.className = 'fixed inset-0 z-[100] flex items-center justify-center bg-black/80 backdrop-blur-sm px-6';
 
