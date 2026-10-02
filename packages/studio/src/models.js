@@ -4049,6 +4049,21 @@ export const getAspectRatiosForModel = (modelId) => {
 // Text-to-Video Models
 // ==========================================
 export const t2vModels = [
+    {
+    "id": "hailuo",
+    "name": "Hailuo (Replicate)",
+    "endpoint": "hailuo",
+    "inputs": {
+      "prompt": {
+        "description": "Text prompt describing the video you want to generate.",
+        "type": "string",
+        "title": "Prompt",
+        "name": "prompt"
+      }
+    },
+    "provider": "replicate",
+    "provider_name": "Replicate"
+  },
   {
     "id": "seedance-lite-t2v",
     "name": "Seedance 1.0 Lite",
