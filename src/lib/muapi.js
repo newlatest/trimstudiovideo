@@ -148,7 +148,25 @@ export class MuapiClient {
         const modelInfo = getVideoModelById(params.model);
         const endpoint = modelInfo?.endpoint || params.model;
         const url = `${this.baseUrl}/api/v1/${endpoint}`;
+        if (params.model === 'hailuo') {
+            const createRes = await fetch('/api/replicate/create', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ prompt: params.prompt })
+            });
+            const job = await createRes.json();
+            if (params.onRequestId) params.onRequestId(job.id);
 
+            let result = job;
+            for (let i = 0; i < 150; i++) {
+                if (result.status === 'succeeded' || result.status === 'failed' || result.status === 'canceled') break;
+                await new Promise(r => setTimeout(r, 2000));
+                const statusRes = await fetch('/api/replicate/status?id=' + job.id);
+                result = await statusRes.json();
+            }
+            const videoUrl = Array.isArray(result.output) ? result.output[0] : result.output;
+            return { ...result, url: videoUrl };
+        }
         const finalPayload = {};
 
         if (params.prompt) finalPayload.prompt = params.prompt;
